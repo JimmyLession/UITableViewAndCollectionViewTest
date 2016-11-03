@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		259E7E601DCB8813009C4708 /* UITableView代理方法执行顺序.png in Resources */ = {isa = PBXBuildFile; fileRef = 259E7E5F1DCB8813009C4708 /* UITableView代理方法执行顺序.png */; };
 		5064878B1DCB2D5B007CB20B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064878A1DCB2D5B007CB20B /* main.m */; };
 		5064878E1DCB2D5B007CB20B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064878D1DCB2D5B007CB20B /* AppDelegate.m */; };
 		506487911DCB2D5B007CB20B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506487901DCB2D5B007CB20B /* ViewController.m */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		259E7E5F1DCB8813009C4708 /* UITableView代理方法执行顺序.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITableView代理方法执行顺序.png"; sourceTree = "<group>"; };
 		506487861DCB2D5B007CB20B /* DemoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5064878A1DCB2D5B007CB20B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5064878C1DCB2D5B007CB20B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				506487A11DCB2FB1007CB20B /* TestTableViewController.m */,
 				506487A31DCB2FC8007CB20B /* TestCollectionViewController.h */,
 				506487A41DCB2FC8007CB20B /* TestCollectionViewController.m */,
+				259E7E5F1DCB8813009C4708 /* UITableView代理方法执行顺序.png */,
 			);
 			path = DemoTest;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				506487991DCB2D5C007CB20B /* LaunchScreen.storyboard in Resources */,
 				506487961DCB2D5C007CB20B /* Assets.xcassets in Resources */,
+				259E7E601DCB8813009C4708 /* UITableView代理方法执行顺序.png in Resources */,
 				506487941DCB2D5C007CB20B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +326,7 @@
 				5064879F1DCB2D5C007CB20B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
