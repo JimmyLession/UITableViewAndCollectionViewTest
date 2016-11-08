@@ -9,7 +9,9 @@
 #import "TestTableViewController.h"
 
 @interface TestTableViewController ()
-
+{
+    NSInteger _section;
+}
 @end
 
 @implementation TestTableViewController
@@ -22,6 +24,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _section = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,11 +34,12 @@
 
 #pragma mark  -------------华丽的分割线---------------------------  UITableViewDataSource 数据源代理方法
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"%s",__func__);
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    _section++;
+      NSLog(@"%s------------------->第%ld轮",__func__,_section);
     return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"%s",__func__);
     return 1;
@@ -107,42 +111,28 @@
 
 // Variable height support  --> 设置高度代理方法
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"%s",__func__);
-    return 60;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    NSLog(@"%s",__func__);
-    return 30;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    NSLog(@"%s",__func__);
-    return 30;
-}
 
 // Use the estimatedHeight methods to quickly calcuate guessed values which will allow for fast load times of the table.
 // If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready to be displayed, so more expensive logic can be placed there.
 
 //这三个方法 为优化tableview而诞生的方法。设置  预估高度 三个方法！
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0)
-{
-    NSLog(@"%s",__func__);
-    return 50;
-}
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section NS_AVAILABLE_IOS(7_0)
-{
-    NSLog(@"%s",__func__);
-     return 10;
-}
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section NS_AVAILABLE_IOS(7_0)
-{
-    NSLog(@"%s",__func__);
-     return 10;
-}
 
+// 返回 cell ，页眉，页脚真实高度 方法
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        NSLog(@"%s",__func__);
+    return 60;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+        NSLog(@"%s",__func__);
+    return 30;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+        NSLog(@"%s",__func__);
+    return 30;
+}
 // Section header & footer information. Views are preferred over title should you decide to provide both
 
 // custom view for header. will be adjusted to default or specified header height
@@ -316,6 +306,7 @@
 - (void)tableView:(UITableView *)tableView prefetchRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
 {
     NSLog(@"%s",__func__);
+  
 }
 - (void)tableView:(UITableView *)tableView cancelPrefetchingForRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
 {
